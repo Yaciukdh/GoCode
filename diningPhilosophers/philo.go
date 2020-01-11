@@ -6,15 +6,15 @@ import (
 	"time"
 )
 
-//solution 
+//global 
 
-var owner []int
-var claim []int
-var debug = 0
-var delay = 1
-var claimCheck = 0
-var claimMutex = sync.Mutex{}
-var arbiter = sync.Mutex{}
+var owner []int //array of who is using mutex
+var claim []int //array of who has a claim on a mutex
+var debug = 0 // variable for printing debug info
+var delay = 1 // variable for ensuring deadlock
+var claimCheck = 0 // seperate debug variable for solution 3
+var claimMutex = sync.Mutex{} //solution 4 mutex
+var arbiter = sync.Mutex{} // solution 2 mutex
 
 
 type utensil struct {
@@ -194,7 +194,7 @@ func main() {
 
 	var timer = 0
 	n := 3
-  solnNumber := 0 // 0 is no fix, 1 is left hand soln, 2 is arbiter soln, 3 is chandy-ish soln
+  	solnNumber := 0 // 0 is no fix, 1 is left hand soln, 2 is arbiter soln, 3 is chandy-ish soln
 	owner = make([]int,n )
 	claim = make([]int,n )
 	initOwner()
