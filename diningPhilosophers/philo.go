@@ -10,7 +10,7 @@ var owner []int
 var claim []int
 var foodEaten []int
 var debug = 0
-var delay = 0
+var delay = 1
 var claimCheck = 0
 var foodPrint = 1
 var claimMutex = sync.Mutex{}
